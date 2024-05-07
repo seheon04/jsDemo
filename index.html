@@ -5,6 +5,18 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>JavaScript Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+          .register('/service-worker.js')
+          .then(function (registration) {
+            console.log('Service Worker 등록 성공: ', registration);
+          })
+          .catch(function (err) {
+            console.log('Service Worker 등록 실패: ', err);
+          });
+      }
+    </script>
     <link href="./style1.css" rel="stylesheet" />
     <link href="./style2.css" rel="stylesheet" />
     <link href="./style3.css" rel="stylesheet" />
